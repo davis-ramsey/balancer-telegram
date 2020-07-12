@@ -74,6 +74,7 @@ bot.on('message', (msg) => {
 			setTimeout(() => {
 				bot.sendMessage(chatId, `Current Portfolio Value: $${Number(totalValue.toFixed(2)).toLocaleString()}`);
 				bot.sendMessage(chatId, `Fees Earned for last 24 hrs: $${Number(dayFees.toFixed(2)).toLocaleString()}`);
+				bot.sendMessage(chatId, `Annual APY from fees: ${(dayFees / totalValue * 100 * 365).toFixed(2)}%`);
 			}, 2000);
 		});
 	}, 300000);
