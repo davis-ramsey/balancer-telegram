@@ -63,7 +63,8 @@ bot.on('message', (msg) => {
 					`/ethereum?contract_addresses=${tokenList.join(',')}&vs_currencies=usd`
 				);
 				for (let i = 0; i < tokenList.length; i++) {
-					poolTotal += tokenBalances[i] * prices.data[tokenList[i]].usd;
+					if (!prices || !prices.data) poolTotal += 0;
+					else poolTotal += tokenBalances[i] * prices.data[tokenList[i]].usd;
 				}
 				totalValue += poolTotal * (pool.balance / pool.poolId.totalShares);
 				dayFees +=
