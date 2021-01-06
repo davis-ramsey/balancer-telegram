@@ -4,7 +4,7 @@
   "description": "a telegram bot that tracks balancer pools",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "node-telegram-bot-api": "^0.50.0"
   },
   "devDependencies": {},
